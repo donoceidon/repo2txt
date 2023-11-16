@@ -30,7 +30,7 @@ This Python script provides an automated way to document the structure and conte
 
 4. **Review the Output**: The script will create an `output.txt` file (or your specified file name) with the repository's structure and file contents.
 
-## Application in Training LLMs
+## Application in Training GPTS/LLM (what I use it and created it for)
 - **Data Structuring for AI Understanding**: The script's output can be used to train AI models like GPT on the structure and content of software repositories. This is particularly useful for models being trained to understand code and documentation.
 - **Custom Dataset Creation**: By using this script on multiple repositories, you can create a custom dataset tailored for specific programming languages, frameworks, or coding styles.
 - **Enhanced Contextual Understanding**: The detailed documentation assists AI models in gaining a better contextual understanding of how real-world codebases are structured and maintained.
