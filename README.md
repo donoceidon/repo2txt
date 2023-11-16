@@ -17,7 +17,7 @@ This Python script provides an automated way to document the structure and conte
 
 3. **Run the Script**: Use the following command to run the script:
    ```bash
-   python repo_to_text.py [path_to_repo] [output_file_name.txt]
+   python repo2text.py [path_to_repo] [output_file_name.txt]
    ```
    Replace `[path_to_repo]` with the path to your cloned repository and `[output_file_name.txt]` with your desired output file name.
 
