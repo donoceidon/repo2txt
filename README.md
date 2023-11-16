@@ -1,4 +1,4 @@
-# repototxt
+# repo2txt
 
 ## Overview
 This Python script provides an automated way to document the structure and contents of a software repository. It generates a comprehensive text file that includes both a hierarchical tree of the directory structure and detailed contents of each file. This tool is particularly useful for understanding and analyzing the structure of codebases and can be invaluable for training AI models like GPT and other custom LLMs on specific code repositories.
