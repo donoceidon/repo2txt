@@ -14,7 +14,9 @@
 ## Suggested Installation
 For ease of use install with pip
 
+```bash
 pip install repo2txt
+```
 
 But if you wish you can just copy the repo2txt.py file and run it that way. If you using this method please remember to install python-docx.
 
