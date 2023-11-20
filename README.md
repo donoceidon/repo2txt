@@ -1,45 +1,43 @@
 # repo2txt
 
 ## Overview
-`repo2txt` is a Python script I developed to help me facilitate an easy method of supplying training data to GPT-style Large Language Models (LLMs) that I was working with. The script automates the combining of assets in project or a project repository, generating one comprehensive text file and/or Word document that can be fed beck to the ingestor in one shot. The created file includes both a hierarchical tree of the directory structure and the contents of each file. My goal in creating repo2txt was to simplify the process of supplying codebases for AI training or anlalitic purposes, and I hope this tool will be helpful to you.
+`repo2txt` is a Python tool I assemble to help streamline the process of preparing training data for GPT-style Models (LLMs). It's especially helpful in passing a codebase to a GPT. This script automates the task of compiling assets from a project or repository into a single, comprehensive text file or Word document. The resulting file includes a hierarchical tree of the directory structure and the contents of each file.
 
 ## Features
-- **Directory/File Tree**: Generates a high-level overview of the repository's directory and file structure.
-- **Detailed Contents**: Provides the full content of each file, offering insights into the code or text within the repository.
-- **Output Formats**: Supports creating documentation in both `.txt` and `.docx` formats.
-- **Customizable Ignoring Mechanism**: Allows specification of file types, individual files, and directories to ignore (e.g., binary files, temporary files, specific directories like `node_modules`).
-- **Command-Line Flexibility**: Offers various command-line arguments to tailor the script's functionality.
-
+- **Directory/File Tree**: Generates a detailed overview of the repository's directory and file structure.
+- **File Contents**: Includes the content of each file, offering a comprehensive view into the code or text within the repository.
+- **Output Formats**: Supports output in both `.txt` and `.docx` formats.
+- **Customizable Ignoring Mechanism**: Provides options to ignore specific file types, individual files, and directories, allowing for a tailored documentation process.
+- **Command-Line Flexibility**: Various command-line arguments are available to customize the script's output according to the user's needs.
 
 ## Suggested Installation
-For ease of use install with pip
+For ease of use, `repo2txt` can be installed via pip:
 
 ```bash
 pip install repo2txt
 ```
 
-But if you wish you can just copy the repo2txt.py file and run it that way. If you using this method please remember to install python-docx.
+Alternatively, you can directly run the `repo2txt.py` script. Ensure to install `python-docx` if using this method.
 
 ## Usage
 
-Run the script from the command line, specifying the path to the repository and the desired output file name. For example:
+Run the script from the command line by specifying the path to the repository and the desired output file name. For example:
 
 ```bash
-python repo2txt.py [path_to_repo] [output_file_name]
+python repo2txt.py -r [path_to_repo] -o [output_file_name]
 ```
 
-Replace `[path_to_repo]` with the path to your cloned repository and `[output_file_name]` with your desired output file name (with `.txt` or `.docx` extension).
+Replace `[path_to_repo]` with the path to your repository and `[output_file_name]` with your desired output file name (including the `.txt` or `.docx` extension).
 
-By default if you do not specify any path it will run inside the directory it is in and will drill down. 
-
-By default if you do not specify the name of the output file it will be output.txt.
-
+By default, if no path is specified, the script operates in the current directory. Similarly, if no output file name is provided, it defaults to `output.txt`.
 
 ### Optional Command-Line Arguments:
 
-- `--ignore-files`: List of file names to ignore (e.g., `--ignore-files file1.txt file2.txt`).
-- `--ignore-types`: List of file extensions to ignore (e.g., `--ignore-types .log .tmp`).
-- `--exclude-dir`: List of directory names to exclude (e.g., `--exclude-dir dir1 dir2`).
+- `-r`, `--repo_path`: Specify the path to the repository. Defaults to the current directory if not specified.
+- `-o`, `--output_file`: Name for the output file. Defaults to "output.txt".
+- `--ignore-files`: List of file names to ignore (e.g., `--ignore-files file1.txt file2.txt`). Specify 'none' to ignore no files.
+- `--ignore-types`: List of file extensions to ignore (e.g., `--ignore-types .log .tmp`). Defaults to a predefined list in `config.json`. Specify 'none' to ignore no types.
+- `--exclude-dir`: List of directory names to exclude (e.g., `--exclude-dir dir1 dir2`). Specify 'none' to exclude no directories.
 - `--ignore-settings`: Flag to ignore common settings files.
 - `--include-dir`: Include only a specific directory and its contents (e.g., `--include-dir src`).
 
@@ -47,15 +45,13 @@ By default if you do not specify the name of the output file it will be output.t
 
 1. **Documenting a Repository to a Text File**:
    ```bash
-   python repo2txt.py /path/to/repository output.txt
+   python repo2txt.py -r /path/to/repository -o output.txt
    ```
 
 2. **Documenting with Exclusions**:
    ```bash
-   python repo2txt.py /path/to/repository output.docx --ignore-types .log .tmp --exclude-dir tests
+   python repo2txt.py -r /path/to/repository -o output.docx --ignore-types .log .tmp --exclude-dir tests
    ```
 
 ## Contributing
-Contributions to enhance `repo2txt` are welcome. Feel free to fork the repo, make your changes, and submit a pull request.
-
----
+Contributions to enhance `repo2txt` are always welcome. Feel free to fork the repository, make your improvements, and submit a pull request.
