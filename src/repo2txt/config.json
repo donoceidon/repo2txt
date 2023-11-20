@@ -1,0 +1,10 @@
+{
+    "image_extensions": [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".svg"],
+    "video_extensions": [".mp4", ".avi", ".mov", ".mkv", ".flv", ".wmv"],
+    "audio_extensions": [".mp3", ".wav", ".aac", ".flac", ".ogg"],
+    "document_extensions": [".pdf", ".doc", ".docx", ".ppt", ".pptx", ".xls", ".xlsx", ".jar", ".zip", ".tar", ".gzip"],
+    "executable_extensions": [".exe", ".dll", ".bin", ".sh", ".bat"],
+    "settings_extensions": [".ini", ".cfg", ".conf", ".json", ".yaml", ".yml"],
+    "additional_ignore_types": [".lock"],
+    "default_output_file": "output.txt"
+}
