@@ -1,7 +1,7 @@
 # repo2txt
 
 ## Overview
-`repo2txt` is a Python tool I assemble to help streamline the process of preparing training data for GPT-style Models (LLMs). It's especially helpful in passing a codebase to a GPT. This script automates the task of compiling assets from a project or repository into a single, comprehensive text file or Word document. The resulting file includes a hierarchical tree of the directory structure and the contents of each file.
+`repo2txt` is a Python tool I assembled to help streamline the process of preparing code base training data for GPT-style Models (LLMs). It's especially helpful in passing a codebase to a GPT. This script automates the task of compiling assets from a project or repository into a single, comprehensive text file or Word document. The resulting file includes a hierarchical tree of the directory structure and the contents of each file.
 
 ## Features
 - **Directory/File Tree**: Generates a detailed overview of the repository's directory and file structure.
