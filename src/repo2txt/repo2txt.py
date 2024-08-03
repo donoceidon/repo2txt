@@ -319,7 +319,7 @@ def main():
         doc.add_heading("<-- File Content Ends", level=2)
         doc.save(args.output_file)
     else:
-        with open(args.output_file, 'w') as output_file:
+        with open(args.output_file, 'w', encoding='utf-8') as output_file:
             output_file.write("Repository Documentation\n")
             output_file.write(
             "This document provides a comprehensive overview of the repository's structure and contents.\n"
