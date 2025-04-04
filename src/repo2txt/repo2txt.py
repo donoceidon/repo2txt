@@ -286,9 +286,19 @@ def main():
     """
     args = parse_args()
 
+    default_argparse_ignore_types = IMAGE_EXTENSIONS + VIDEO_EXTENSIONS + AUDIO_EXTENSIONS + DOCUMENT_EXTENSIONS + EXECUTABLE_EXTENSIONS
+
+    if args.ignore_types == ['none']:
+        # User explicitly wants to ignore nothing by type
+        args.ignore_types = []
+    elif args.ignore_types == default_argparse_ignore_types:
+        # User did not provide --ignore-types, so use the argparse defaults
+        # AND add the additional ones from config.json
+        args.ignore_types = default_argparse_ignore_types + ADDITIONAL_IGNORE_TYPES
+
     # Convert 'none' keyword to empty list
     args.ignore_files = [] if args.ignore_files == ['none'] else args.ignore_files
-    args.ignore_types = [] if args.ignore_types == ['none'] else IMAGE_EXTENSIONS + VIDEO_EXTENSIONS + AUDIO_EXTENSIONS + DOCUMENT_EXTENSIONS + EXECUTABLE_EXTENSIONS + ADDITIONAL_IGNORE_TYPES
+    # args.ignore_types = [] if args.ignore_types == ['none'] else IMAGE_EXTENSIONS + VIDEO_EXTENSIONS + AUDIO_EXTENSIONS + DOCUMENT_EXTENSIONS + EXECUTABLE_EXTENSIONS + ADDITIONAL_IGNORE_TYPES
     args.exclude_dir = [] if args.exclude_dir == ['none'] else args.exclude_dir
 
     # Check if the provided directory path is valid
